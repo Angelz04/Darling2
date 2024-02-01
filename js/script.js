@@ -26,7 +26,7 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A001',
       precioUnitario: 168.76,
       tipoAccesorio: 'collar',
-      imagenes: ['./assets/Luxury Gems Necklace.png'],
+      imagenes: ['../assets/Luxury Gems Necklace.png'],
       descripcion: 'Collar de gemas de lujo',
       stockPorColorTalla: {
         plata: crearStockPorTalla(48, 70),
@@ -39,7 +39,7 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A002',
       precioUnitario: 125.28,
       tipoAccesorio: 'anillo',
-      imagenes: ['./assets/Aurora Ring.png'],
+      imagenes: ['../assets/Aurora Ring.png'],
       descripcion: 'Anillo aurora',
       stockPorColorTalla: {
         rubi: crearStockPorTalla(48, 70),
@@ -52,7 +52,7 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A003',
       precioUnitario: 620.73,
       tipoAccesorio: 'collar',
-      imagenes: ['./assets/Reflection Necklace.png'],
+      imagenes: ['../assets/Reflection Necklace.png'],
       descripcion: 'Collar Reflectante',
       stockPorColorTalla: {
         bronce: crearStockPorTalla(48, 70),
@@ -65,7 +65,7 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A004',
       precioUnitario: 321.71,
       tipoAccesorio: 'anillo',
-      imagenes: ['./assets/Dreamy Infinity Ring.png'],
+      imagenes: ['../assets/Dreamy Infinity Ring.png'],
       descripcion: 'anillo infinito de ensueño',
       stockPorColorTalla: {
         plata: crearStockPorTalla(48, 70),
@@ -78,7 +78,7 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A005',
       precioUnitario: 168.76,
       tipoAccesorio: 'anillo',
-      imagenes: ['./assets/Opulent Jewels Ring.png'],
+      imagenes: ['../assets/Opulent Jewels Ring.png'],
       descripcion: 'anillo de joyas opulentas',
       stockPorColorTalla: {
         plata: crearStockPorTalla(48, 70),
@@ -91,7 +91,7 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A006',
       precioUnitario: 125.28,
       tipoAccesorio: 'aretes',
-      imagenes: ['./assets/Serene Soliraire Earrings.png'],
+      imagenes: ['../assets/Serene Soliraire Earrings.png'],
       descripcion: 'anillos solitarios serenos',
       stockPorColorTalla: {
         dorado: crearStockPorTalla(48, 70),
@@ -104,7 +104,7 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A007',
       precioUnitario: 620.73,
       tipoAccesorio: 'aretes',
-      imagenes: ['./assets/Timeless Halo Earrings.png'],
+      imagenes: ['../assets/Timeless Halo Earrings.png'],
       descripcion: 'pendientes de halo atemporales',
       stockPorColorTalla: {
         plata: crearStockPorTalla(48, 70),
@@ -117,7 +117,7 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A008',
       precioUnitario: 327.71,
       tipoAccesorio: 'aretes',
-      imagenes: ['./assets/Exquisite Earrings.png', './assets/Exquisite Earrings Order.png'],
+      imagenes: ['../assets/Exquisite Earrings.png', './assets/Exquisite Earrings Order.png'],
       descripcion: 'pendientes exquisitos',
       stockPorColorTalla: {
         rubi: crearStockPorTalla(48, 70),
@@ -131,7 +131,7 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A009',
       precioUnitario: 168.76,
       tipoAccesorio: 'anillo',
-      imagenes: ['./assets/Timeless Elegance Ring.png'],
+      imagenes: ['../assets/Timeless Elegance Ring.png'],
       descripcion: 'Anillos de elegancia atemporal',
       stockPorColorTalla: {
         zafiro: crearStockPorTalla(48, 70),
@@ -144,9 +144,9 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A010',
       precioUnitario: 620.73,
       tipoAccesorio: 'anillo',
-      imagenes: ['./assets/Luxury Charms Ring Order.png','./assets/Luxury Charms Ring Product View.png',
-                 './assets/Luxury Charms Ring View1.png','./assets/Luxury Charms Ring View2.png',
-                 './assets/Luxury Charms Ring View3.png','./assets/Luxury Charms Ring View1.png'
+      imagenes: ['../assets/Luxury Charms Ring Order.png','../assets/Luxury Charms Ring Product View.png',
+                 '../assets/Luxury Charms Ring View1.png','../assets/Luxury Charms Ring View2.png',
+                 '../assets/Luxury Charms Ring View3.png','../assets/Luxury Charms Ring View1.png'
                 ],
       descripcion: 'anillo de gemas de lujo',
       stockPorColorTalla: {
@@ -160,7 +160,7 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A011',
       precioUnitario: 620.73,
       tipoAccesorio: 'anillo',
-      imagenes: ['./assets/Blissful Bloom Ring.png'],
+      imagenes: ['../assets/Blissful Bloom Ring.png'],
       descripcion: 'Anillos de floración dichosa',
       stockPorColorTalla: {
         plata: crearStockPorTalla(48, 70),
@@ -173,7 +173,7 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A012',
       precioUnitario: 620.73,
       tipoAccesorio: 'anillo',
-      imagenes: ['./assets/Sparking Ring.png'],
+      imagenes: ['../assets/Sparking Ring.png'],
       descripcion: 'anillo brillante',
       stockPorColorTalla: {
         plata: crearStockPorTalla(48, 70),
@@ -186,7 +186,7 @@ function crearStockPorTalla(desde, hasta) {
       codigo: 'A013',
       precioUnitario: 620.73,
       tipoAccesorio: 'anillo',
-      imagenes: ['./assets/Glimmering Ring.png'],
+      imagenes: ['../assets/Glimmering Ring.png'],
       descripcion: 'anillo brillante',
       stockPorColorTalla: {
         plata: crearStockPorTalla(48, 70),
@@ -251,4 +251,27 @@ function crearStockPorTalla(desde, hasta) {
   const totalCompra = calcularTotalCompra(productosCompraDetallados);
   console.log('Total a pagar de la compra:', `$${totalCompra}`);
   
+  // función contenedores
+  const containerCards = document.getElementById("containerCards");
+
+  const printProducts = (container, listProducts) => {
+      container.innerHTML = "";
+      listProducts.forEach(element => {
+          container.innerHTML += `
+              <article class="card" data-click="card">
+                  <img src=${element.imagenes[0]} alt=${element.nombre} data-click="card">
+                  <h3 data-click="card">${element.nombre}</h3>
+                  <span data-click="card">$${element.precioUnitario}</span>
+              </article>
+          `;
+      });
+  }
   
+  printProducts(containerCards, productos);
+  
+  document.addEventListener("click", (event) => {
+      
+      if (event.target.getAttribute("data-click") === "card") {        
+          location.href = "../Our-Products.html";
+      }
+  })

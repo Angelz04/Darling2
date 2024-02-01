@@ -2719,3 +2719,44 @@ select{
     }
     
 }
+
+#containerCards{
+    margin-top: 4.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    margin-left: 8.25rem;
+    margin-right: 8.25rem;
+}
+
+.card{
+    width: 17.25rem;
+    height: 25.25rem;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 0px 1px 0px rgba(23, 26, 31, 0.07), 0px 0px 2px 0px rgba(23, 26, 31, 0.12);
+    margin-bottom: 2rem;
+}
+
+.card h3{
+    color: #171A1F;
+    font-family: Cormorant Garamond;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px; /* 150% */
+    margin-top: 12px; 
+}
+
+.card h4{
+    color: #171A1F;
+    font-family: Manrope;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+
