@@ -30,8 +30,8 @@
                     <li><a href="#">Collections</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#"><img src="../assets/Profile 1.png" alt="profile-icon"></a></li>
-                    <li><a href="#"><img src="../assets/Shopping cart 1.png " alt="shopingCart-icon"></a></li>
+                    <li><img src="../assets/Profile 1.png" alt="profile-icon"></li>
+                    <li><img id="btnCart" src="../assets/Shopping cart 1.png " alt="shopingCart-icon"></li>
                 </ul>
             </div>
         </nav>
@@ -65,78 +65,41 @@
                 <option value="option1">Sort by price</option>
             </select>
         </section>
+
+        <section id="containerCards"></section>
+
         <section id="shop-gallery">
-                <div class="shop-gallery-container">
-                    <img src="../assets/Luxury Gems Necklace.png" alt="Luxury Gems Necklace">
-                    <h3>Luxury Gems Necklace</h3>
-                    <h4>$168.76</h4>
+            <div class="shop-gallery-container-big">
+                <img src="../assets/Timeless-Elegance-Ring.png" alt="Timeless Elegance Ring">
+                <h3>Timeless Elegance Ring</h3>
+                <h4>$168.76</h4>
+            </div>
+            <div class="four-images">
+                <a href="./Luxury-Charms-View.html">
+                <div class="shop-gallery-container-bt">
+                    <img src="../assets/Luxury-Charms-Ring.png" alt="Luxury Charms Ring">
+                    <h3>Luxury Charms Ring</h3>
+                    <h4>$620.73</h4>
                 </div>
-                <div class="shop-gallery-container">
-                    <img src="../assets/Aurora Ring.png" alt="Aurora Ring">
-                    <h3>Aurora Ring</h3>
-                    <h4>$125.28</h4>
-                </div>
-                <div class="shop-gallery-container">
-                    <img src="../assets/Reflection Necklace.png" alt="Reflections Necklace">
-                    <h3>Reflections Necklace</h3>
+                </a>
+                <div class="shop-gallery-container-bt">
+                    <img src="../assets/Blissful-Bloom-Ring.png" alt="Blissful Bloom Rings">
+                    <h3>Blissful Bloom Rings</h3>
                     <h4>$620.73</h4>
                 </div>
                 <div class="shop-gallery-container">
-                    <img src="../assets/Dreamy Infinity Ring.png" alt="Dreamy Infinity Ring">
-                    <h3>Dreamy Infinity Ring</h3>
-                    <h4>$327.71</h4>
-                </div>
-                <div class="shop-gallery-container">
-                    <img src="../assets/Opulent Jewels Ring.png" alt="Opulent Jewels Ring">
-                    <h3>Opulent Jewels Ring</h3>
-                    <h4>$168.76</h4>
-                </div>
-                <div class="shop-gallery-container">
-                    <img src="../assets/Serene Soliraire Earrings.png" alt="Serene Solitaire Earrings">
-                    <h3>Serene Solitaire Earrings</h3>
-                    <h4>$125.28</h4>
-                </div>
-                <div class="shop-gallery-container">
-                    <img src="../assets/Timeless Halo Earrings.png" alt="Luxury Gems Necklace">
-                    <h3>Luxury Gems Necklace</h3>
-                    <h4>$168.76</h4>
-                </div>
-                <div class="shop-gallery-container">
-                    <img src="../assets/Exquisite Earrings.png" alt="Timeless Halo Earrings">
-                    <h3>Timeless Halo Earrings</h3>
+                    <img src="../assets/Sparking-Ring.png" alt="Sparkling Ring ">
+                    <h3>Sparkling Ring </h3>
                     <h4>$620.73</h4>
                 </div>
-                <div class="shop-gallery-container-big">
-                    <img src="../assets/Timeless Elegance Ring.png" alt="Timeless Elegance Ring">
-                    <h3>Timeless Elegance Ring</h3>
-                    <h4>$168.76</h4>
-                </div>
-                <div class="four-images">
-                    <a href="./Luxury-Charms-View.html">
-                    <div class="shop-gallery-container-bt">
-                        <img src="../assets/Luxury Charms Ring.png" alt="Luxury Charms Ring">
-                        <h3>Luxury Charms Ring</h3>
-                        <h4>$620.73</h4>
-                    </div>
-                    </a>
-                    <div class="shop-gallery-container-bt">
-                        <img src="../assets/Blissful Bloom Ring.png" alt="Blissful Bloom Rings">
-                        <h3>Blissful Bloom Rings</h3>
-                        <h4>$620.73</h4>
-                    </div>
-                    <div class="shop-gallery-container">
-                        <img src="../assets/Sparking Ring.png" alt="Sparkling Ring ">
-                        <h3>Sparkling Ring </h3>
-                        <h4>$620.73</h4>
-                    </div>
-                    <div class="shop-gallery-container">
-                        <img src="../assets/Glimmering Ring.png" alt="Glimmering Ring">
-                        <h3>Glimmering Ring</h3>
-                        <h4>$620.73</h4>
-                    </div>
+                <div class="shop-gallery-container">
+                    <img src="../assets/Glimmering-Ring.png" alt="Glimmering Ring">
+                    <h3>Glimmering Ring</h3>
+                    <h4>$620.73</h4>
                 </div>
             </div>
         </section>
+        
         <section id="pagination">
             <div class="pagination-container">
                 <ul>
@@ -206,6 +169,68 @@
             </div>
         </div>
     </footer> 
+<<<<<<< HEAD
+    <script src="../js/script.js"></script>
+=======
+    <div class="modalCart hidden">
+        <section>
+            <div class="cart-container">
+                <h2>Your cart</h2>
+                <button id="closeModal">
+                    <img src="../assets/Remove Icon.png" alt="remove-icon">
+                </button>
+                <div class="cart-product">
+                    <img class="product-img" src="../assets/Luxury Charms Ring.png" alt="Luxury Charms Ring">
+                    <div class="cart-product-info">
+                        <h3>Luxury Charms Ring</h3>
+                        <h4>Code: 78205</h4>
+                        <h5>$620.73</h5>
+                    </div>
+                    <div class="cart-product-edit">
+                        <img src="../assets/Edit Icon.png" alt="Edit Icon">
+                        <h4>x1</h4>
+                    </div>
+                    <img class="cart-line" src="../assets/Cart Line.png" alt="Cart Line">
+                </div>
+                <div class="cart-product">
+                    <img class="product-img" src="../assets/Exquisite Earrings Order.png" alt="Exquisite Earrings">
+                    <div class="cart-product-info">
+                        <h3>Exquisite Earrings</h3>
+                        <h4>Code: 92701</h4>
+                        <h5>$125.28</h5>
+                    </div>
+                    <div class="cart-product-edit">
+                        <img src="../assets/Edit Icon.png" alt="Edit Icon">
+                        <h4>x1</h4>
+                    </div>
+                    <img class="cart-line" src="../assets/Cart Line.png" alt="Cart Line">
+                </div>
+                <div class="cart-product">
+                    <img class="product-img" src="../assets/Delights Earrings Order.png" alt="Deligth Earrings">
+                    <div class="cart-product-info">
+                        <h3>Deligths Earrings</h3>
+                        <h4>Code: 78201</h4>
+                        <h5>$327.71</h5>
+                    </div>
+                    <div class="cart-product-edit">
+                        <img src="../assets/Edit Icon.png" alt="Edit Icon">
+                        <h4>x1</h4>
+                    </div>
+                    <img class="cart-line" src="../assets/Cart Line.png" alt="Cart Line">
+                </div>
+                <div class="totalCheck-container">
+                    <img src="../assets/Cart Line.png" alt="Cart Line">
+                    <div class="totalCheck">
+                        <h3>Total</h3>
+                        <h4>$621.75</h4>
+                    </div>
+                    <button>Continue to check out</button>
+                </div>
+            </div>
+        </section>
+      </div>
+    <script src="../cart.js"></script>
     <script src="../script.js"></script>
+>>>>>>> 6b42235 (Vista cart)
 </body>
 </html>
