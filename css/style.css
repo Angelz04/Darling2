@@ -1709,13 +1709,14 @@ select{
   align-items: center;
   border-radius: 26px;
   background: #0D554A;
+  border: none;
+  text-decoration: none;
   color: #FFF;
   font-family: Manrope;
-  font-size: 18px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px; /* 155.556% */
-  border: none;
 }
 
 .shop-options-container{
