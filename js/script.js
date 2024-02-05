@@ -286,3 +286,6 @@ document.addEventListener("click", (event) => {
     location.href = "../pages/Luxury-Charms-View.html";
   }
 });
+
+
+//Form
