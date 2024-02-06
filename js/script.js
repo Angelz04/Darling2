@@ -6,25 +6,6 @@ function toggleMenu() {
   menu.classList.toggle("open");
 }
 
-//Botón Filtro 
-document.addEventListener("DOMContentLoaded", function() {
-  const sectionLinks = document.querySelectorAll("#shop .shop-list a");
-  
-  sectionLinks.forEach(function(link) {
-    link.addEventListener("click", function(event) {
-      event.preventDefault();
-
-      // Remove 'active' class from all links
-      sectionLinks.forEach(function(link) {
-        link.classList.remove("active");
-      });
-      
-      // Add 'active' class to the clicked link
-      this.classList.add("active");
-    });
-  });
-});
-
 //LISTADO DE PRODUCTOS//
 
 // Función para crear el stock por talla
@@ -201,7 +182,6 @@ const productos = [
 function filtrarPorTipo(productos, tipo) {
   return productos.filter((producto) => producto.tipoAccesorio === tipo);
 }
-
 // Función para ordenar por precio (ascendente y descendente)
 function ordenarPorPrecio(productos, ascendente = true) {
   return [...productos].sort((a, b) => {
@@ -211,52 +191,25 @@ function ordenarPorPrecio(productos, ascendente = true) {
   });
 }
 
-// Función para buscar productos por nombre
-function buscarPorNombre(productos, terminoBusqueda) {
-  return productos.filter((producto) =>
-    producto.nombre.toLowerCase().includes(terminoBusqueda.toLowerCase())
-  );
-}
-
-// Objeto que mapea los tipos de accesorios a sus correspondientes tipos
-const tipoAccesorioMap = {
-  all: productos,
-  rings: filtrarPorTipo(productos, "anillo"),
-  necklaces: filtrarPorTipo(productos, "collar"),
-  earrings: filtrarPorTipo(productos, "aretes"),
-  bracelets: filtrarPorTipo(productos, "bracaletes"),
-};
-
-const containerCards = document.getElementById("containerCards");
-
-const printProducts = (container, listProducts) => {
-  container.innerHTML = "";
-  listProducts.forEach((element) => {
-    container.innerHTML += `
-              <article class="card" data-click="card">
-                  <img src=${element.imagenes[0]} alt=${element.nombre} data-click="card">
-                  <h3 data-click="card">${element.nombre}</h3>
-                  <span data-click="card">$${element.precioUnitario}</span>
-              </article>
-          `;
-  });
-};
-
-// Función para cargar los productos "all" al cargar la página
-window.addEventListener("load", () => {
-  // Simular clic en el enlace "all" del navbar
-  document.getElementById("all").click();
-});
-
-// Event listener para los enlaces de tipo de accesorio
+// Filtrado por tipo
 document.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", function () {
     const tipoAccesorio = this.id;
-    const productosFiltrados = tipoAccesorioMap[tipoAccesorio];
-    printProducts(containerCards, productosFiltrados);
-    searchBar.value = "";
+    let productosFiltrados;
 
-    // Agregar evento de cambio al selector de ordenamiento de precios
+    if (tipoAccesorio === "all") {
+      productosFiltrados = productos;
+    } else if (tipoAccesorio === "rings") {
+      productosFiltrados = filtrarPorTipo(productos, "anillo");
+    } else if (tipoAccesorio === "necklaces") {
+      productosFiltrados = filtrarPorTipo(productos, "collar");
+    } else if (tipoAccesorio === "earrings") {
+      productosFiltrados = filtrarPorTipo(productos, "aretes");
+    } else if (tipoAccesorio === "bracelets") {
+      productosFiltrados = filtrarPorTipo(productos, "bracaletes");
+    }
+    printProducts(containerCards, productosFiltrados);
+    //Busqueda por precio
     sortByPrice.addEventListener("change", () => {
       const sortOrder = sortByPrice.value === "asc" ? true : false;
       const sortedProducts = ordenarPorPrecio(productosFiltrados, sortOrder);
@@ -265,28 +218,23 @@ document.querySelectorAll("a").forEach((link) => {
   });
 });
 
-// Event listener para el filtro por nombre
-const searchBar = document.querySelector(".search-bar");
-searchBar.addEventListener("input", function () {
-  const terminoBusqueda = searchBar.value.trim();
-  const productosEncontrados = buscarPorNombre(productos, terminoBusqueda);
-  printProducts(containerCards, productosEncontrados);
+// Función para buscar productos por nombre
+function buscarPorNombre(productos, terminoBusqueda) {
+  return productos.filter((producto) =>
+    producto.nombre.toLowerCase().includes(terminoBusqueda.toLowerCase())
+  );
+}
 
+// Búsqueda por nombre
+const terminoBusqueda = "Luxury";
+const productosEncontrados = buscarPorNombre(productos, terminoBusqueda);
+console.log(
+  `Productos que contienen "${terminoBusqueda}":`,
+  productosEncontrados
+);
 
-  // Evento de cambio al selector de ordenamiento de precios
-  sortByPrice.addEventListener("change", () => {
-    const sortOrder = sortByPrice.value === "asc" ? true : false;
-    const sortedProducts = ordenarPorPrecio(productosEncontrados, sortOrder);
-    printProducts(containerCards, sortedProducts);
-  });
-});
-
-
-document.addEventListener("click", (event) => {
-  if (event.target.getAttribute("data-click") === "card") {
-    location.href = "../pages/Luxury-Charms-View.html";
-  }
-});
+//console.log('Productos ordenados por precio ascendente:', ordenarPorPrecio(productos, true));
+//console.log('Productos ordenados por precio descendente:', ordenarPorPrecio(productos, false));
 
 // Función para calcular el total a pagar de la compra
 function calcularTotalCompra(productos) {
@@ -314,3 +262,27 @@ const productosCompraDetallados = productosCompra.map((item) => ({
 
 const totalCompra = calcularTotalCompra(productosCompraDetallados);
 console.log("Total a pagar de la compra:", `$${totalCompra}`);
+
+// Función contenedores
+const containerCards = document.getElementById("containerCards");
+
+const printProducts = (container, listProducts) => {
+  container.innerHTML = "";
+  listProducts.forEach((element) => {
+    container.innerHTML += `
+              <article class="card" data-click="card">
+                  <img src=${element.imagenes[0]} alt=${element.nombre} data-click="card">
+                  <h3 data-click="card">${element.nombre}</h3>
+                  <span data-click="card">$${element.precioUnitario}</span>
+              </article>
+          `;
+  });
+};
+
+printProducts(containerCards, productos);
+
+document.addEventListener("click", (event) => {
+  if (event.target.getAttribute("data-click") === "card") {
+    location.href = "../pages/Luxury-Charms-View.html";
+  }
+});

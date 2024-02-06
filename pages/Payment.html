@@ -1,295 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Manrope:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/style.css" />
-  </head>
-  <body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
     <header>
-      <nav>
-        <div class="brand">
-          <span>Darling</span>
-        </div>
-        <div class="menu">
-          <div class="menu-toggle" onclick="toggleMenu()">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-          <ul class="nav-list">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="./Our-Products.html">Shop</a></li>
-            <li><a href="#">Collections</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><img src="../assets/Profile 1.png" alt="profile-icon" /></li>
-            <li>
-              <img
-                id="btnCart"
-                src="../assets/Shopping cart 1.png "
-                alt="shopingCart-icon"
-              />
-            </li>
-          </ul>
-        </div>
-      </nav>
+        <nav>
+            <div class="brand">
+                <span>Darling</span>
+            </div>
+            <div class="menu">
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./Our-Products.html">Shop</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><img src="../assets/Profile 1.png" alt="profile-icon"></li>
+                    <li><img id="btnCart" src="../assets/Shopping cart 1.png " alt="shopingCart-icon"></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main>
-      <section id="order-payment">
-        <div class="order-summary-container">
-          <h2>Order summarry</h2>
-          <div class="order-container">
-            <img
-              src="../assets/Luxury-Charms-Ring-Order.png"
-              alt="Luxury Charms Order"
-            />
-            <div class="product-info">
-              <h3>Luxury Charms Ring</h3>
-              <h4>Code: 78205</h4>
+        <section id="order-payment">
+            <div class="order-summary-container">
+                <h2>Order summarry</h2>
+                <div class="order-container">
+                    <img src="../assets/Luxury-Charms-Ring-Order.png" alt="Luxury Charms Order">
+                    <div class="product-info">
+                        <h3>Luxury Charms Ring</h3>
+                        <h4>Code: 78205</h4>
+                    </div>
+                    <h5>$620.73</h5>
+                    <img class="deleate-icon" src="../assets/deleate icon.png" alt="Deleate icon">
+                </div>
+                <div class="order-container">
+                    <img src="../assets/Exquisite Earrings Order.png" alt="Exquisite Earrings Order">
+                    <div class="product-info">
+                        <h3>Exquisite Earrings</h3>
+                        <h4>Code: 78205</h4>
+                    </div>
+                    <h5>$620.73</h5>
+                    <img class="deleate-icon"  src="../assets/deleate icon.png" alt="Deleate icon">
+                </div>
+                <div class="order-container">
+                    <img src="../assets/Delights Earrings Order.png" alt="Delights Earrings Order">
+                    <div class="product-info">
+                        <h3>Deligths Earrings</h3>
+                        <h4>Code: 78205</h4>
+                    </div>
+                    <h5>$620.73</h5>
+                    <img class="deleate-icon"  src="../assets/deleate icon.png" alt="Deleate icon">
+                </div>
             </div>
-            <h5>$620.73</h5>
-            <img
-              class="deleate-icon"
-              src="../assets/deleate icon.png"
-              alt="Deleate icon"
-            />
-          </div>
-          <div class="order-container">
-            <img
-              src="../assets/Exquisite Earrings Order.png"
-              alt="Exquisite Earrings Order"
-            />
-            <div class="product-info">
-              <h3>Exquisite Earrings</h3>
-              <h4>Code: 78205</h4>
+            <div class="payment-method">
+                <div class="payment-container">
+                <div class="payment-method-container">
+                    <h2>Payment method</h2>
+                    <h3>Change payments methods</h3>
+                    <div class="card-info">
+                        <img src="../assets/Mastercard Logo.png" alt="Mastercard-logo">
+                        <h4>Mastercard</h4>
+                        <h5>**** 5987</h5>
+                    </div>
+                </div>
+                <div class="voucher-container">
+                    <h2>Voucher</h2>
+                    <div class="voucher-input">
+                        <h3>$15 OFF</h3>
+                        <button>Apply</button>
+                    </div>
+                    <h4>$15 Off</h4>
+                </div>
+                <div class="summary-container">
+                    <h2>Summary</h2>
+                    <div class="summary-box">
+                        <h3>Subtotal</h3>
+                        <h4>$1073.72</h4>
+                    </div>
+                    <div class="summary-box">
+                        <h3>Discount</h3>
+                        <h4>-$15</h4>
+                    </div>
+                    <div class="summary-box">
+                        <h3>Fee</h3>
+                        <h4>$0</h4>
+                    </div>
+                    <img src="../assets/Payment Line.png" alt="payment-line">
+                </div>
+                <div class="total-container">
+                    <div class="total">
+                        <h3>Total</h3>
+                        <h2>$1058.72</h2>
+                    </div>
+                    <a href="./Purchase-Confirmation.html">
+                    <button class="total-btn" >Proceed to payment</button>
+                    </a>
+                </div>
             </div>
-            <h5>$620.73</h5>
-            <img
-              class="deleate-icon"
-              src="../assets/deleate icon.png"
-              alt="Deleate icon"
-            />
-          </div>
-          <div class="order-container">
-            <img
-              src="../assets/Delights Earrings Order.png"
-              alt="Delights Earrings Order"
-            />
-            <div class="product-info">
-              <h3>Deligths Earrings</h3>
-              <h4>Code: 78205</h4>
             </div>
-            <h5>$620.73</h5>
-            <img
-              class="deleate-icon"
-              src="../assets/deleate icon.png"
-              alt="Deleate icon"
-            />
-          </div>
-        </div>
-        <div class="payment-method">
-          <div class="payment-container">
-            <div class="payment-method-container">
-              <h2>Payment method</h2>
-              <h3><a href="./formularios.html">Change payments methods</a></h3>
-              <div class="card-info">
-                <img
-                  src="../assets/Mastercard Logo.png"
-                  alt="Mastercard-logo"
-                />
-                <h4>Mastercard</h4>
-                <h5>**** 5987</h5>
-              </div>
+        </section>
+        <section id="also-like2">
+            <div class="also-like-container2">
+                <div class="like-view">
+                    <h2>You may also like</h2>
+                    <h3>View More</h3>
+                </div>
+                <div class="gallery3">
+                    <img src="../assets/Product 7.png" alt="seven-product">
+                    <img src="../assets/Product 8.png" alt="eigth-product">
+                    <img src="../assets/Product 9.png" alt="nine-product">
+                    <img src="../assets/Product 10.png" alt="ten-product">
+                    <img class="ft11" src="../assets/Product 11.png" alt="eleven-product">
+                </div>
             </div>
-            <div class="voucher-container">
-              <h2>Voucher</h2>
-              <div class="voucher-input">
-                <h3>$15 OFF</h3>
-                <button>Apply</button>
-              </div>
-              <h4>$15 Off</h4>
-            </div>
-            <div class="summary-container">
-              <h2>Summary</h2>
-              <div class="summary-box">
-                <h3>Subtotal</h3>
-                <h4>$1073.72</h4>
-              </div>
-              <div class="summary-box">
-                <h3>Discount</h3>
-                <h4>-$15</h4>
-              </div>
-              <div class="summary-box">
-                <h3>Fee</h3>
-                <h4>$0</h4>
-              </div>
-              <img src="../assets/Payment Line.png" alt="payment-line" />
-            </div>
-            <div class="total-container">
-              <div class="total">
-                <h3>Total</h3>
-                <h2>$1058.72</h2>
-              </div>
-              <a href="./Purchase-Confirmation.html">
-                <button class="total-btn">Proceed to payment</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="also-like2">
-        <div class="also-like-container2">
-          <div class="like-view">
-            <h2>You may also like</h2>
-            <h3>View More</h3>
-          </div>
-          <div class="gallery3">
-            <img src="../assets/Product 7.png" alt="seven-product" />
-            <img src="../assets/Product 8.png" alt="eigth-product" />
-            <img src="../assets/Product 9.png" alt="nine-product" />
-            <img src="../assets/Product 10.png" alt="ten-product" />
-            <img
-              class="ft11"
-              src="../assets/Product 11.png"
-              alt="eleven-product"
-            />
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
     <footer>
-      <div class="footer-container">
-        <div class="column1">
-          <h2>Darling</h2>
-          <p>@ 2022 Bran Inc</p>
+        <div class="footer-container">
+            <div class="column1">
+                <h2>Darling</h2>
+                <p>@ 2022 Bran Inc</p>
+            </div>
+            <div class="column2">
+                <h4>Shop</h4>
+                <h4>Collection</h4>
+                <h4>About</h4>
+            </div>
+            <div class="column3">
+                <h4>Contact</h4>
+                <h4>Privacy</h4>
+                <h4>Terms</h4>
+            </div>
+            <div class="column4">
+                <h3>Subscribe to our newsletter</h3>
+                <h5>For products announcements and exclusive insights</h5>
+                <div class="input-container">
+                <img class="email-icon" src="../assets/Mail.png" alt="email-icon">
+                <input type="email" placeholder=" Input your email">
+                <button>Subscribe</button>
+                </div>
+                <div class="logos">
+                    <img class="logotw" src="../assets/Logo twitter.png" alt="Logo 1">
+                    <img class="logofb" src="../assets/Logo facebook.png" alt="Logo 2">
+                    <img class="logoin" src="../assets/Logo linkedin.png" alt="Logo 3">
+                    <img class="logoyt" src="../assets/Logo youtube.png" alt="Logo 4">
+                </div>
+            </div>
         </div>
-        <div class="column2">
-          <h4>Shop</h4>
-          <h4>Collection</h4>
-          <h4>About</h4>
-        </div>
-        <div class="column3">
-          <h4>Contact</h4>
-          <h4>Privacy</h4>
-          <h4>Terms</h4>
-        </div>
-        <div class="column4">
-          <h3>Subscribe to our newsletter</h3>
-          <h5>For products announcements and exclusive insights</h5>
-          <div class="input-container">
-            <img class="email-icon" src="../assets/Mail.png" alt="email-icon" />
-            <input type="email" placeholder=" Input your email" />
-            <button>Subscribe</button>
-          </div>
-          <div class="logos">
-            <img class="logotw" src="../assets/Logo twitter.png" alt="Logo 1" />
-            <img
-              class="logofb"
-              src="../assets/Logo facebook.png"
-              alt="Logo 2"
-            />
-            <img
-              class="logoin"
-              src="../assets/Logo linkedin.png"
-              alt="Logo 3"
-            />
-            <img class="logoyt" src="../assets/Logo youtube.png" alt="Logo 4" />
-          </div>
-        </div>
-      </div>
-    </footer>
+    </footer> 
     <div class="modalCart hidden">
-      <section>
-        <div class="cart-container">
-          <h2>Your cart</h2>
-          <button id="closeModal">
-            <img src="../assets/Remove Icon.png" alt="remove-icon" />
-          </button>
-          <div class="cart-product">
-            <img
-              class="product-img"
-              src="../assets/Luxury-Charms-Ring.png"
-              alt="Luxury Charms Ring"
-            />
-            <div class="cart-product-info">
-              <h3>Luxury Charms Ring</h3>
-              <h4>Code: 78205</h4>
-              <h5>$620.73</h5>
+        <section>
+            <div class="cart-container">
+                <h2>Your cart</h2>
+                <button id="closeModal">
+                    <img src="../assets/Remove Icon.png" alt="remove-icon">
+                </button>
+                <div class="cart-product">
+                    <img class="product-img" src="../assets/Luxury-Charms-Ring.png" alt="Luxury Charms Ring">
+                    <div class="cart-product-info">
+                        <h3>Luxury Charms Ring</h3>
+                        <h4>Code: 78205</h4>
+                        <h5>$620.73</h5>
+                    </div>
+                    <div class="cart-product-edit">
+                        <img src="../assets/Edit Icon.png" alt="Edit Icon">
+                        <h4>x1</h4>
+                    </div>
+                    <img class="cart-line" src="../assets/Cart Line.png" alt="Cart Line">
+                </div>
+                <div class="cart-product">
+                    <img class="product-img" src="../assets/Exquisite Earrings Order.png" alt="Exquisite Earrings">
+                    <div class="cart-product-info">
+                        <h3>Exquisite Earrings</h3>
+                        <h4>Code: 92701</h4>
+                        <h5>$125.28</h5>
+                    </div>
+                    <div class="cart-product-edit">
+                        <img src="../assets/Edit Icon.png" alt="Edit Icon">
+                        <h4>x1</h4>
+                    </div>
+                    <img class="cart-line" src="../assets/Cart Line.png" alt="Cart Line">
+                </div>
+                <div class="cart-product">
+                    <img class="product-img" src="../assets/Delights Earrings Order.png" alt="Deligth Earrings">
+                    <div class="cart-product-info">
+                        <h3>Deligths Earrings</h3>
+                        <h4>Code: 78201</h4>
+                        <h5>$327.71</h5>
+                    </div>
+                    <div class="cart-product-edit">
+                        <img src="../assets/Edit Icon.png" alt="Edit Icon">
+                        <h4>x1</h4>
+                    </div>
+                    <img class="cart-line" src="../assets/Cart Line.png" alt="Cart Line">
+                </div>
+                <div class="totalCheck-container">
+                    <img src="../assets/Cart Line.png" alt="Cart Line">
+                    <div class="totalCheck">
+                        <h3>Total</h3>
+                        <h4>$621.75</h4>
+                    </div>
+                    <button>Continue to check out</button>
+                </div>
             </div>
-            <div class="cart-product-edit">
-              <img src="../assets/Edit Icon.png" alt="Edit Icon" />
-              <h4>x1</h4>
-            </div>
-            <img
-              class="cart-line"
-              src="../assets/Cart Line.png"
-              alt="Cart Line"
-            />
-          </div>
-          <div class="cart-product">
-            <img
-              class="product-img"
-              src="../assets/Exquisite Earrings Order.png"
-              alt="Exquisite Earrings"
-            />
-            <div class="cart-product-info">
-              <h3>Exquisite Earrings</h3>
-              <h4>Code: 92701</h4>
-              <h5>$125.28</h5>
-            </div>
-            <div class="cart-product-edit">
-              <img src="../assets/Edit Icon.png" alt="Edit Icon" />
-              <h4>x1</h4>
-            </div>
-            <img
-              class="cart-line"
-              src="../assets/Cart Line.png"
-              alt="Cart Line"
-            />
-          </div>
-          <div class="cart-product">
-            <img
-              class="product-img"
-              src="../assets/Delights Earrings Order.png"
-              alt="Deligth Earrings"
-            />
-            <div class="cart-product-info">
-              <h3>Deligths Earrings</h3>
-              <h4>Code: 78201</h4>
-              <h5>$327.71</h5>
-            </div>
-            <div class="cart-product-edit">
-              <img src="../assets/Edit Icon.png" alt="Edit Icon" />
-              <h4>x1</h4>
-            </div>
-            <img
-              class="cart-line"
-              src="../assets/Cart Line.png"
-              alt="Cart Line"
-            />
-          </div>
-          <div class="totalCheck-container">
-            <img class="cart-line" src="../assets/Cart Line.png" alt="Cart Line" />
-            <div class="totalCheck">
-              <h3>Total</h3>
-              <h4>$621.75</h4>
-            </div>
-            <button>Continue to check out</button>
-          </div>
-        </div>
-      </section>
-    </div>
-    <script src="../js/script.js"></script>
-    <script src="../js/cart.js"></script>
-  </body>
+        </section>
+      </div>
+      <script src="../js/script.js"></script> 
+      <script src="../js/cart.js"></script>
+</body>
 </html>
