@@ -3038,11 +3038,12 @@ select{
 .formPayment {
   display: flex;
   flex-direction: column;
-  padding-top: 15rem;
-  padding-left: 25rem;
-  margin-bottom: 20rem;
+  padding-top: 12rem;
+  margin-bottom: 6rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 5rem;
-  width: 45%;
 }
 
 .formPayment span {
@@ -3058,7 +3059,7 @@ select{
 #formCustomer span{
   font-size: 2rem;
   font-weight: 900;
-  margin-top: 8rem;
+  margin-top: 6rem;
   margin-bottom: 5rem;
   display: block;
   color: var(--color-primary);
@@ -3094,21 +3095,18 @@ select{
   font-weight: 400;
   line-height: 28px;
   margin-top: 5rem;
-  margin-left: 8rem;
 }
 
 @media screen and (max-width: 768px) {
   .formPayment {
     flex-direction: column;
-    padding-left: 12rem;
   }
 
   .formPayment input {
-    width: 100%;
+    width: 76%;
   }
 
   .formBtn{
     width: 300px;
-    margin-left: 2rem;
   }
 }
