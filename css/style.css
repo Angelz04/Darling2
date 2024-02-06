@@ -1196,11 +1196,17 @@ footer{
   color: #FFF;
 }
 
+.shop-list a.active {
+  background: #0D554A;
+  color: #FFF;
+}
+
 .shop-container img{
   width: 1px;
   height: 19px;
   margin-top: 9px;
 }
+
 
 
 select{
@@ -2830,7 +2836,6 @@ select{
 }
 
 .cart-product-info{
-  padding-left: 1rem;
   padding-top: 0.5rem;
 }
 .cart-product h3{
@@ -2862,7 +2867,6 @@ select{
   height: 94px;
 }
 .cart-product-edit{
-  padding-left: 5.47rem;
   align-items: center;
   text-align: center;
 }
@@ -2927,6 +2931,98 @@ select{
   text-align: left;
   border: none;  
 }
+
+@media screen and (max-width: 1400px) {
+  .modalCart {    
+    justify-content: center;
+    overflow-y: scroll;
+  }
+  
+  .modalCart section {    
+    width: 50%;
+    height: 150%;
+    background-color: white;
+  }
+  .cart-container{
+    padding-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .totalCheck-container{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+  }
+  .cart-product{
+    padding-top: 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .cart-product-edit img{
+    padding: none;
+  }
+  .product-img{
+    width: 116px;
+  }
+}
+
+@media screen and (max-width: 836px) {
+  .cart-line{
+    width: 220px;
+  }
+  .totalCheck-container{
+    margin-top: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .totalCheck{
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     margin-bottom: 1rem;
+     width: auto;
+  }
+  .totalCheck-container button{
+    display: inline-flex;
+    padding: 9px 26px 9px 25px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  
+  .cart-line{
+    width: 120px;
+  }
+  .product-img{
+    width: 86px;
+  }
+  .totalCheck-container button{
+    padding: 6px 20px 6px 20px;
+    font-size: 12px;
+    text-align: center;
+  }
+  .cart-container{
+    padding-top: 30%;
+  }
+  .modalCart section { 
+    height: 145%;
+  }
+}
+
+/*Formulario*/
 
 .buy-btn a {
   font-size: 14px;
