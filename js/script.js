@@ -6,19 +6,78 @@ function toggleMenu() {
   menu.classList.toggle("open");
 }
 
-//Botón Filtro 
-document.addEventListener("DOMContentLoaded", function() {
+// Función para cargar los productos "all" al cargar la página
+window.addEventListener("load", () => {
+  // Simular clic en el enlace "all" del navbar
+  document.getElementById("all").click();
+});
+
+// Función para manejar el evento de clic en las cards
+document.addEventListener("click", (event) => {
+  if (event.target.getAttribute("data-click") === "card") {
+    location.href = "../pages/Luxury-Charms-View.html";
+  }
+});
+
+// Función para manejar los eventos de los botones
+function manejarEventosBotones() {
+  // Manejar el click en los botones de color
+  const colorButtons = document.querySelectorAll(".color-btn");
+  colorButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      colorButtons.forEach((btn) => btn.classList.remove("selectedColor"));
+      button.classList.add("selectedColor");
+    });
+  });
+
+  // Manejar el click en los botones de talla
+  const sizeButtons = document.querySelectorAll(".btn-size");
+  sizeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      sizeButtons.forEach((btn) => btn.classList.remove("selectedSize"));
+      button.classList.add("selectedSize");
+    });
+  });
+
+  const quantitySpan = document.getElementById("quantity");
+
+  // Manejar el evento click del botón de disminuir cantidad
+  const decreaseButton = document.getElementById("decrease");
+  decreaseButton.addEventListener("click", () => {
+    let quantity = parseInt(quantitySpan.textContent);
+    if (quantity > 1) {
+      quantity--;
+      quantitySpan.textContent = quantity;
+    }
+  });
+
+  // Manejar el evento click del botón de aumentar cantidad
+  const increaseButton = document.getElementById("increase");
+  increaseButton.addEventListener("click", () => {
+    let quantity = parseInt(quantitySpan.textContent);
+    quantity++;
+    quantitySpan.textContent = quantity;
+  });
+}
+
+// Llamar a la función para manejar los eventos de los botones una vez que se haya cargado el DOM
+window.addEventListener("DOMContentLoaded", () => {
+  manejarEventosBotones();
+});
+
+//Botón Filtro
+document.addEventListener("DOMContentLoaded", function () {
   const sectionLinks = document.querySelectorAll("#shop .shop-list a");
-  
-  sectionLinks.forEach(function(link) {
-    link.addEventListener("click", function(event) {
+
+  sectionLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
       event.preventDefault();
 
       // Remove 'active' class from all links
-      sectionLinks.forEach(function(link) {
+      sectionLinks.forEach(function (link) {
         link.classList.remove("active");
       });
-      
+
       // Add 'active' class to the clicked link
       this.classList.add("active");
     });
@@ -242,12 +301,6 @@ const printProducts = (container, listProducts) => {
   });
 };
 
-// Función para cargar los productos "all" al cargar la página
-window.addEventListener("load", () => {
-  // Simular clic en el enlace "all" del navbar
-  document.getElementById("all").click();
-});
-
 // Event listener para los enlaces de tipo de accesorio
 document.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", function () {
@@ -272,20 +325,12 @@ searchBar.addEventListener("input", function () {
   const productosEncontrados = buscarPorNombre(productos, terminoBusqueda);
   printProducts(containerCards, productosEncontrados);
 
-
   // Evento de cambio al selector de ordenamiento de precios
   sortByPrice.addEventListener("change", () => {
     const sortOrder = sortByPrice.value === "asc" ? true : false;
     const sortedProducts = ordenarPorPrecio(productosEncontrados, sortOrder);
     printProducts(containerCards, sortedProducts);
   });
-});
-
-
-document.addEventListener("click", (event) => {
-  if (event.target.getAttribute("data-click") === "card") {
-    location.href = "../pages/Luxury-Charms-View.html";
-  }
 });
 
 // Función para calcular el total a pagar de la compra
@@ -314,3 +359,16 @@ const productosCompraDetallados = productosCompra.map((item) => ({
 
 const totalCompra = calcularTotalCompra(productosCompraDetallados);
 console.log("Total a pagar de la compra:", `$${totalCompra}`);
+
+//Llamado desde el Json Server
+
+const getProducts = async () => {
+  const promesa = fetch("http://localhost:3000/productos");
+  const resolver = await promesa;
+  const respuesta = await resolver.json();
+  console.log(respuesta);
+  printProducts(containerCards, respuesta);
+  let returnProducts = "";
+};
+
+getProducts();
