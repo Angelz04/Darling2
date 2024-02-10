@@ -1597,22 +1597,29 @@ select{
   line-height: 26px; /* 162.5% */
 }
 
-.circle-grey{
+.selectedColor {
+  outline-width: 4px;
+  outline: 1.5px solid var(--color-background);
+}
+
+#circle-grey{
   width: 36px;
   height: 36px;
   background-color: #DEE1E6;
   border-radius: 50%; 
   display: inline-block;
   margin-right: 10px; 
+  border:#DEE1E6;
 }
 
-.circle-pink{
+#circle-pink{
   width: 36px;
   height: 36px;
-  background-color:#E6AE87; 
+  background-color: #E6AE87; 
   border-radius: 50%; 
   display: inline-block;
   margin-right: 10px; 
+  border: #E6AE87;
 }
 
 .size-container{
@@ -1636,7 +1643,7 @@ select{
   justify-content: space-between;
 }
 
-.size-container button{
+.btn-size{
   height: 36px;
   padding: 7px 12px;
   justify-content: center;
@@ -1646,7 +1653,7 @@ select{
   background: #FFF;
 }
 
-.size-container button :hover{
+.selectedSize {
   border-radius: 4px;
   border: 1px solid #8F640C;
   background: #FFF;
