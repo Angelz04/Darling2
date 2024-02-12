@@ -90,11 +90,193 @@ function crearStockPorTalla(desde, hasta) {
   return stock;
 }
 
-// Listado De Productos
 
+const setProducts = async () => {
+  const promesa = fetch("http://localhost:3000/productos");
+  const resolver = await promesa;
+  const respuesta = await resolver.json();
+  return respuesta;
+}
+
+const productos = []
+const tipoAccesorioMap = []
+setProducts().then((data) => {
+  productos = data
+  tipoAccesorioMap = {
+    all: productos,
+    rings: filtrarPorTipo(productos, "anillo"),
+    necklaces: filtrarPorTipo(productos, "collar"),
+    earrings: filtrarPorTipo(productos, "aretes"),
+    bracelets: filtrarPorTipo(productos, "brazaletes"),
+  };
+})
+
+
+
+// // Listado De Productos
+// const productos = [
+//   {
+//     id: 1,
+//     nombre: "Luxury Gems Necklace",
+//     codigo: "A001",
+//     precioUnitario: 168.76,
+//     tipoAccesorio: "collar",
+//     imagenes: ["../assets/luxury_gems_necklace.png"],
+//     descripcion: "Collar de gemas de lujo",
+//     stockPorColorTalla: {
+//       plata: crearStockPorTalla(48, 70),
+//       dorado: crearStockPorTalla(48, 70),
+//     },
+//   },
+//   {
+//     id: 2,
+//     nombre: "Aurora Ring",
+//     codigo: "A002",
+//     precioUnitario: 125.28,
+//     tipoAccesorio: "anillo",
+//     imagenes: ["../assets/Aurora-Ring.png"],
+//     descripcion: "Anillo aurora",
+//     stockPorColorTalla: {
+//       rubi: crearStockPorTalla(48, 70),
+//       dorado: crearStockPorTalla(48, 70),
+//     },
+//   },
+//   {
+//     id: 3,
+//     nombre: "Reflection Necklace",
+//     codigo: "A003",
+//     precioUnitario: 620.73,
+//     tipoAccesorio: "collar",
+//     imagenes: ["../assets/Reflection-Necklace.png"],
+//     descripcion: "Collar Reflectante",
+//     stockPorColorTalla: {
+//       bronce: crearStockPorTalla(48, 70),
+//       dorado: crearStockPorTalla(48, 70),
+//     },
+//   },
+//   {
+//     id: 4,
+//     nombre: "Dreamy-Infinity-Ring",
+//     codigo: "A004",
+//     precioUnitario: 321.71,
+//     tipoAccesorio: "anillo",
+//     imagenes: ["../assets/Dreamy-Infinity-Ring.png"],
+//     descripcion: "anillo infinito de ensueño",
+//     stockPorColorTalla: {
+//       plata: crearStockPorTalla(48, 70),
+//       dorado: crearStockPorTalla(48, 70),
+//     },
+//   },
+//   {
+//     id: 5,
+//     nombre: "Opulent Jewels Ring",
+//     codigo: "A005",
+//     precioUnitario: 168.76,
+//     tipoAccesorio: "anillo",
+//     imagenes: ["../assets/Opulent-Jewels-Ring.png"],
+//     descripcion: "anillo de joyas opulentas",
+//     stockPorColorTalla: {
+//       plata: crearStockPorTalla(48, 70),
+//       zafiro: crearStockPorTalla(48, 70),
+//     },
+//   },
+//   {
+//     id: 6,
+//     nombre: "Serene Solitaire Earrings",
+//     codigo: "A006",
+//     precioUnitario: 125.28,
+//     tipoAccesorio: "aretes",
+//     imagenes: ["../assets/Serene-Soliraire-Earrings.png"],
+//     descripcion: "anillos solitarios serenos",
+//     stockPorColorTalla: {
+//       dorado: crearStockPorTalla(48, 70),
+//       zafiro: crearStockPorTalla(48, 70),
+//     },
+//   },
+//   {
+//     id: 7,
+//     nombre: "Timeless Halo Earrings",
+//     codigo: "A007",
+//     precioUnitario: 620.73,
+//     tipoAccesorio: "aretes",
+//     imagenes: ["../assets/Timeless-Halo-Earrings.png"],
+//     descripcion: "pendientes de halo atemporales",
+//     stockPorColorTalla: {
+//       plata: crearStockPorTalla(48, 70),
+//       dorado: crearStockPorTalla(48, 70),
+//     },
+//   },
+//   {
+//     id: 8,
+//     nombre: "Exquisite Earrings",
+//     codigo: "A008",
+//     precioUnitario: 327.71,
+//     tipoAccesorio: "aretes",
+//     imagenes: ["../assets/Exquisite-Earrings.png"],
+//     descripcion: "pendientes exquisitos",
+//     stockPorColorTalla: {
+//       rubi: crearStockPorTalla(48, 70),
+//       dorado: crearStockPorTalla(48, 70),
+//     },
+//   },
+
+//   {
+//     id: 9,
+//     nombre: "Luxury Charms Ring",
+//     codigo: "A010",
+//     precioUnitario: 620.73,
+//     tipoAccesorio: "anillo",
+//     imagenes: ["../assets/Luxury-Charms-Ring.png"],
+//     descripcion: "anillo de gemas de lujo",
+//     stockPorColorTalla: {
+//       plata: crearStockPorTalla(48, 70),
+//       dorado: crearStockPorTalla(48, 70),
+//     },
+//   },
+//   {
+//     id: 10,
+//     nombre: "Blissful Bloom Rings",
+//     codigo: "A011",
+//     precioUnitario: 620.73,
+//     tipoAccesorio: "anillo",
+//     imagenes: ["../assets/Blissful-Bloom-Ring.png"],
+//     descripcion: "Anillos de floración dichosa",
+//     stockPorColorTalla: {
+//       plata: crearStockPorTalla(48, 70),
+//       dorado: crearStockPorTalla(48, 70),
+//     },
+//   },
+//   {
+//     id: 11,
+//     nombre: "Sparkling Ring",
+//     codigo: "A012",
+//     precioUnitario: 620.73,
+//     tipoAccesorio: "anillo",
+//     imagenes: ["../assets/Sparking-Ring.png"],
+//     descripcion: "anillo brillante",
+//     stockPorColorTalla: {
+//       plata: crearStockPorTalla(48, 70),
+//       bronce: crearStockPorTalla(48, 70),
+//     },
+//   },
+//   {
+//     id: 12,
+//     nombre: "Glimmering Ring",
+//     codigo: "A013",
+//     precioUnitario: 620.73,
+//     tipoAccesorio: "anillo",
+//     imagenes: ["../assets/Glimmering-Ring.png"],
+//     descripcion: "anillo brillante",
+//     stockPorColorTalla: {
+//       plata: crearStockPorTalla(48, 70),
+//       dorado: crearStockPorTalla(48, 70),
+//     },
+//   },
+// ];
 
 // Función para filtrar por tipo de producto
 function filtrarPorTipo(productos, tipo) {
+  console.log(productos, tipo)
   return productos.filter((producto) => producto.tipoAccesorio === tipo);
 }
 
@@ -115,13 +297,13 @@ function buscarPorNombre(productos, terminoBusqueda) {
 }
 
 // Objeto que mapea los tipos de accesorios a sus correspondientes tipos
-const tipoAccesorioMap = {
-  all: productos,
-  rings: filtrarPorTipo(productos, "anillo"),
-  necklaces: filtrarPorTipo(productos, "collar"),
-  earrings: filtrarPorTipo(productos, "aretes"),
-  bracelets: filtrarPorTipo(productos, "bracaletes"),
-};
+// const tipoAccesorioMap = {
+//   all: productos,
+//   rings: filtrarPorTipo(productos, "anillo"),
+//   necklaces: filtrarPorTipo(productos, "collar"),
+//   earrings: filtrarPorTipo(productos, "aretes"),
+//   bracelets: filtrarPorTipo(productos, "brazaletes"),
+// };
 
 const containerCards = document.getElementById("containerCards");
 
@@ -149,6 +331,7 @@ const printProducts = (container, listProducts) => {
 document.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", function () {
     const tipoAccesorio = this.id;
+    console.log(tipoAccesorio)
     const productosFiltrados = tipoAccesorioMap[tipoAccesorio];
     printProducts(containerCards, productosFiltrados);
     searchBar.value = "";
