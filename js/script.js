@@ -129,7 +129,7 @@ const printProducts = (container, listProducts) => {
   container.innerHTML = "";
   listProducts.forEach((element) => {
     container.innerHTML += `
-              <article class="card" data-click="card">
+              <article class="card" id="${element.id}" data-click="card">
                   <img src=${element.imagenes[0]} alt=${element.nombre} data-click="card">
                   <h3 data-click="card">${element.nombre}</h3>
                   <span data-click="card">$${element.precioUnitario}</span>
