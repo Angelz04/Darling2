@@ -8,14 +8,14 @@ window.addEventListener("load", () => {
     productos = data;
     getDetails(idDetail);
     manejarEventosBotones();
+    setAddToCart();
   });
 });
 
-const getDetails = idDetail => {
+const getDetails = (idDetail) => {
   var producto = productos.find((producto) => producto.id === idDetail);
-  printDetails(producto)
+  printDetails(producto);
 };
-
 
 const printDetails = (producto) => {
   var leftPart = document.getElementById("left-part");
@@ -40,7 +40,7 @@ const printDetails = (producto) => {
             <img class="big-img" src=${producto.imagenes[0]} alt="Big view">
         </div>
     </div>
-  `
+  `;
 
   var rightPart = document.getElementById("right-part");
   rightPart.innerHTML = `
@@ -48,7 +48,7 @@ const printDetails = (producto) => {
         <h2>${producto.nombre}</h2>
         <h4>Code: ${producto.codigo}</h4>
         <h3>$${producto.precioUnitario}</h3>
-        <h5>Color - Rose Gold</h5>
+        <h5>Color</h5>
         <div class="colors-container">
             <button id ="circle-grey" class = "color-btn"></button>
             <button id ="circle-pink" class = "color-btn"></button>
@@ -78,7 +78,7 @@ const printDetails = (producto) => {
         <button id="increase">+</button>
     </div>
     <div class="add-buy-container">
-        <button class="cart-btn">
+        <button class="cart-btn" id="add-to-cart">
         <img src="../assets/Add shopping cart.png">
         Add to bag</button>
         <button class="buy-btn"><a href="./Payment.html">Buy now</a></button>
@@ -97,8 +97,8 @@ const printDetails = (producto) => {
             <option value="option1">Care</option>
         </select>
     </div>
-  `
-}
+  `;
+};
 
 // Función para manejar los eventos de los botones
 function manejarEventosBotones() {
@@ -139,5 +139,44 @@ function manejarEventosBotones() {
     quantity++;
     quantitySpan.textContent = quantity;
   });
+}
+
+const setAddToCart = () => {
+  const addToCart = document.getElementById("add-to-cart");
+  addToCart.addEventListener("click", () => {
+    var selectedColorBtn = getSelectedColor();
+    var selectedSizeBtn = getSelectedSize();
+    var quantityBtn = getQuantity();
+    console.log(quantityBtn)
+  });
+};
+
+// Método para obtener el color seleccionado
+const getSelectedColor = () => {
+  var colors = document.querySelectorAll(".color-btn");
+  var selectedColor;
+  colors.forEach((color) => {
+    if (color.getAttribute("class") === "color-btn selectedColor"){
+      selectedColor = color
+    }
+  }) 
+  return selectedColor;
+}
+
+// Método para obtener la talla seleccionada
+const getSelectedSize = () => {
+  var sizes = document.querySelectorAll(".btn-size");
+  var selectedSize;
+  sizes.forEach((size) => {
+    if (size.getAttribute("class") === "btn-size selectedSize"){
+      selectedSize = size
+    }
+  })
+  return selectedSize;
+}
+
+//Obtener cantidad seleccionada
+const getQuantity = () => {
+  return document.getElementById("quantity").textContent
 }
 
