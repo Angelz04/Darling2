@@ -1548,7 +1548,7 @@ select{
 }
 
 
-#rigth-part{
+#right-part{
   margin-top: 6rem;
   margin-left: 3rem;
 }
@@ -1790,7 +1790,7 @@ select{
   padding-right: 1rem;
 }
 
-#rigth-part{
+#right-part{
   display: flex;
   flex-direction: column;
   text-align: center;
