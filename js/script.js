@@ -13,8 +13,9 @@ const setProducts = async () => {
   return respuesta;
 };
 
-var productos;
-var tipoAccesorioMap;
+let productos;
+let tipoAccesorioMap;
+
 
 
 // Función para cargar los productos "all" al cargar la página
@@ -35,7 +36,7 @@ window.addEventListener("load", () => {
 // printProducts(containerCards, productos);
 document.addEventListener("click", (event) => {
   if (event.target.getAttribute("data-click") === "card") {
-    var idDetail = event.target.parentNode.getAttribute("id")
+    let idDetail = event.target.parentNode.getAttribute("id")
     location.href = `../pages/Luxury-Charms-View.html?idDetail=${idDetail}`;
   }
 });
@@ -151,12 +152,7 @@ function calcularTotalCompra(productos) {
 }
 
 // Ingresar productos para calcular el total de la compra, (Al ingresar el id, se le asigna el precio declarado en el listado de productos a cada producto)
-const productosCompra = [
-  { productoId: 1, cantidad: 2 },
-  { productoId: 2, cantidad: 3 },
-  { productoId: 4, cantidad: 1 },
-  { productoId: 7, cantidad: 2 },
-];
+const productosCompra = [];
 
 // Obtener productos mediante IDs
 const productosCompraDetallados = productosCompra.map((item) => ({

@@ -1822,6 +1822,11 @@ select{
 }
 }
 
+.big-img{
+  width: 477px;
+  height: 636px;
+}
+
 @media screen and (max-width: 580px) {
   #big-box{
       margin-right: 0.5rem;
