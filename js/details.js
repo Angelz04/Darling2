@@ -43,33 +43,23 @@ const printDetails = (producto) => {
   `;
 
   let rightPart = document.getElementById("right-part");
-  rightPart.innerHTML = `
-    <div class="info-container">
-        <h2>${producto.nombre}</h2>
-        <h4>Code: ${producto.codigo}</h4>
-        <h3>$${producto.precioUnitario}</h3>
-        <h5>Color</h5>
-        <div class="colors-container">
-            ${producto.stockPorColorTalla.map(stock => `
-                <button class="color-btn circle-${stock.color}" data-color="${stock.color}"></button>
-            `).join('')}
-        </div>
+rightPart.innerHTML = `
+  <div class="info-container">
+    <h2>${producto.nombre}</h2>
+    <h4>Code: ${producto.codigo}</h4>
+    <h3>$${producto.precioUnitario}</h3>
+    <h5>Color</h5>
+    <div class="colors-container">
+      <button class="color-btn circle-grey" data-color="${producto.stockPorColorTalla[0].color}"></button>
+      <button class="color-btn circle-pink" data-color="${producto.stockPorColorTalla[1].color}"></button>
     </div>
+  </div>
     <div class="size-container">
         <h3>Size</h3>
         <div class="size-btn-container">
-            <button class="btn-size" id="size48btn">48</button>
-            <button class="btn-size" id="size50btn">50</button>
-            <button class="btn-size" id="size52btn">52</button>
-            <button class="btn-size" id="size54btn">54</button>
-            <button class="btn-size" id="size56btn">56</button>
-            <button class="btn-size" id="size58btn">58</button>
-            <button class="btn-size" id="size60btn">60</button>
-            <button class="btn-size" id="size62btn">62</button>
-            <button class="btn-size" id="size64btn">64</button>
-            <button class="btn-size" id="size66btn">66</button> 
-            <button class="btn-size" id="size68btn">68</button>
-            <button class="btn-size" id="size70btn">70</button>
+            ${producto.stockPorColorTalla[0].tallas.map(talla => `
+              <button class="btn-size" data-talla="${talla}">${talla}</button>
+            `).join('')}
         </div>
     </div>
     <div class="quantity-container">
@@ -149,6 +139,11 @@ const setAddToCart = () => {
     let selectedSizeBtn = getSelectedSize();
     let quantityBtn = getQuantity();
 
+    if (!selectedColorBtn || !selectedSizeBtn) {
+      alert("Porfavor Selcciona Una Talla Y Color Antes de continuar");
+      return;
+    }
+
     // Obtener los detalles del producto almacenados en localStorage
     const idDetail = localStorage.getItem("idDetail");
     const producto = productos.find((producto) => producto.id === idDetail);
@@ -156,9 +151,9 @@ const setAddToCart = () => {
     // Almacenar los detalles del producto en localStorage
     localStorage.setItem("productoEnCarrito", JSON.stringify({
       producto,
-      selectedColorBtn,
-      selectedSizeBtn,
-      quantityBtn
+      Color: selectedColorBtn,
+      talla: selectedSizeBtn,
+      cantidad: quantityBtn
     }));
 
     // Aquí enviar los detalles del producto al endpoint
@@ -168,26 +163,14 @@ const setAddToCart = () => {
 
 // Método para obtener el color seleccionado
 const getSelectedColor = () => {
-  let colors = document.querySelectorAll(".color-btn");
-  let selectedColor;
-  colors.forEach((color) => {
-    if (color.classList.contains("selectedColor")) {
-      selectedColor = color.getAttribute("data-color");
-    }
-  });
-  return selectedColor;
+  const selectedColorBtn = document.querySelector(".selectedColor");
+  return selectedColorBtn ? selectedColorBtn.dataset.color : null;
 };
 
 // Método para obtener la talla seleccionada
 const getSelectedSize = () => {
-  let sizes = document.querySelectorAll(".btn-size");
-  let selectedSize;
-  sizes.forEach((size) => {
-    if (size.classList.contains("selectedSize")) {
-      selectedSize = size.textContent;
-    }
-  });
-  return selectedSize;
+  const selectedSizeBtn = document.querySelector(".selectedSize");
+  return selectedSizeBtn ? selectedSizeBtn.dataset.talla : null;
 };
 
 //Obtener cantidad seleccionada
@@ -195,11 +178,7 @@ const getQuantity = () => {
   return document.getElementById("quantity").textContent;
 };
 
-// Función para enviar los detalles del producto al endpoint del carrito
 const enviarAlCarrito = (producto, selectedColorBtn, selectedSizeBtn, quantityBtn) => {
-  // Aquí realiza la lógica para enviar los detalles al endpoint del carrito
-  // Puedes usar fetch u otra librería para hacer la solicitud al servidor
-  // por ejemplo:
   fetch('http://localhost:3000/carrito', {
     method: 'POST',
     headers: {
@@ -207,24 +186,23 @@ const enviarAlCarrito = (producto, selectedColorBtn, selectedSizeBtn, quantityBt
     },
     body: JSON.stringify({
       producto,
-      selectedColorBtn,
-      selectedSizeBtn,
-      quantityBtn
+      Color: selectedColorBtn,
+      talla: selectedSizeBtn,
+      cantidad: quantityBtn
     }),
   })
   .then(response => {
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error('La red no esta bien');
     }
     return response.json();
   })
   .then(data => {
-    console.log('Response:', data);
-    // Aquí puedes manejar la respuesta del servidor, por ejemplo, mostrar un mensaje de éxito al usuario
+    console.log('Producto Añadido Con Éxito', data);
+
   })
   .catch(error => {
-    console.error('There has been a problem with your fetch operation:', error);
-    // Aquí puedes manejar el error, por ejemplo, mostrar un mensaje de error al usuario
+    console.error('Ocurrio un problema:', error);
   });
 };
 
@@ -233,10 +211,6 @@ const mostrarDetallesEnLocalStorage = () => {
   const productoEnCarrito = JSON.parse(localStorage.getItem("productoEnCarrito"));
   if (productoEnCarrito) {
     console.log("Detalles del producto en el carrito:", productoEnCarrito);
-    // Aquí puedes agregar lógica para mostrar los detalles en tu página, por ejemplo:
-    // document.getElementById("nombreProducto").textContent = productoEnCarrito.producto.nombre;
-    // document.getElementById("precioProducto").textContent = productoEnCarrito.producto.precio;
-    // etc.
   } else {
     console.log("No hay detalles de producto en el carrito almacenados en localStorage.");
   }

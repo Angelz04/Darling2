@@ -1602,7 +1602,7 @@ select{
   outline: 1.5px solid var(--color-background);
 }
 
-#circle-grey{
+.circle-grey{
   width: 36px;
   height: 36px;
   background-color: #DEE1E6;
@@ -1612,7 +1612,7 @@ select{
   border:#DEE1E6;
 }
 
-#circle-pink{
+.circle-pink{
   width: 36px;
   height: 36px;
   background-color: #E6AE87; 
@@ -1784,10 +1784,12 @@ select{
   display: flex;
   flex-direction: row;
   padding-top: 2rem;
+  display: none;
 }
 
 .multiple-views img{
   padding-right: 1rem;
+  display: none;
 }
 
 #right-part{
