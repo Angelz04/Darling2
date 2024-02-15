@@ -85,7 +85,7 @@
               type="text"
               name="Cardholder"
             />
-            <label for="number">Card Number</label>
+            <label for="cardNumber">Card Number</label>
             <input
               id="number"
               type="number"
@@ -149,6 +149,23 @@
         </div>
       </div>
     </footer>
+    <div class="modalCart hidden">
+      <section>
+        <div class="cart-container">
+            <h2>Your cart</h2>
+            <button id="closeModal">
+                <img src="../assets/Remove Icon.png" alt="remove-icon">
+            </button>
+            <div class="cart-product" id="cartProducts">
+                <!-- Los productos se agregarán aquí dinámicamente -->
+            </div>
+            <div class="totalCheck-container" id="totalCheckContainer">
+              <button id="continueButton">Continue to check out</button>
+                <!-- El total de la compra y el botón de continuar se agregarán aquí dinámicamente -->
+            </div>
+        </div>
+    </section>
+    </div>
     <script src="../js/script.js"></script>
     <script src="../js/form.js"></script>
   </body>

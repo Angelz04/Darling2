@@ -81,38 +81,6 @@
 
       <section id="containerCards"></section>
 
-      <!-- <section id="shop-gallery">
-            <div class="shop-gallery-container-big">
-                <img src="../assets/Timeless-Elegance-Ring.png" alt="Timeless Elegance Ring">
-                <h3>Timeless Elegance Ring</h3>
-                <h4>$168.76</h4>
-            </div>
-            <div class="four-images">
-                <a href="./Luxury-Charms-View.html">
-                <div class="shop-gallery-container-bt">
-                    <img src="../assets/Luxury-Charms-Ring.png" alt="Luxury Charms Ring">
-                    <h3>Luxury Charms Ring</h3>
-                    <h4>$620.73</h4>
-                </div>
-                </a>
-                <div class="shop-gallery-container-bt">
-                    <img src="../assets/Blissful-Bloom-Ring.png" alt="Blissful Bloom Rings">
-                    <h3>Blissful Bloom Rings</h3>
-                    <h4>$620.73</h4>
-                </div>
-                <div class="shop-gallery-container">
-                    <img src="../assets/Sparking-Ring.png" alt="Sparkling Ring ">
-                    <h3>Sparkling Ring </h3>
-                    <h4>$620.73</h4>
-                </div>
-                <div class="shop-gallery-container">
-                    <img src="../assets/Glimmering-Ring.png" alt="Glimmering Ring">
-                    <h3>Glimmering Ring</h3>
-                    <h4>$620.73</h4>
-                </div>
-            </div>
-        </section> -->
-
       <section id="pagination">
         <div class="pagination-container">
           <ul>
@@ -194,86 +162,23 @@
       </div>
     </footer>
     <div class="modalCart hidden">
-      <section>
+    <section>
         <div class="cart-container">
-          <h2>Your cart</h2>
-          <button id="closeModal">
-            <img src="../assets/Remove Icon.png" alt="remove-icon" />
-          </button>
-          <div class="cart-product">
-            <img
-              class="product-img"
-              src="../assets/Luxury-Charms-Ring.png"
-              alt="Luxury Charms Ring"
-            />
-            <div class="cart-product-info">
-              <h3>Luxury Charms Ring</h3>
-              <h4>Code: 78205</h4>
-              <h5>$620.73</h5>
+            <h2>Your cart</h2>
+            <button id="closeModal">
+                <img src="../assets/Remove Icon.png" alt="remove-icon">
+            </button>
+            <div class="cart-product" id="cartProducts">
+                <!-- Los productos se agregarán aquí dinámicamente -->
             </div>
-            <div class="cart-product-edit">
-              <img src="../assets/Edit Icon.png" alt="Edit Icon" />
-              <h4>x1</h4>
+            <div class="totalCheck-container" id="totalCheckContainer">
+              <button id="continueButton">Continue to check out</button>
+                <!-- El total de la compra y el botón de continuar se agregarán aquí dinámicamente -->
             </div>
-            <img
-              class="cart-line"
-              src="../assets/Cart Line.png"
-              alt="Cart Line"
-            />
-          </div>
-          <div class="cart-product">
-            <img
-              class="product-img"
-              src="../assets/Exquisite Earrings Order.png"
-              alt="Exquisite Earrings"
-            />
-            <div class="cart-product-info">
-              <h3>Exquisite Earrings</h3>
-              <h4>Code: 92701</h4>
-              <h5>$125.28</h5>
-            </div>
-            <div class="cart-product-edit">
-              <img src="../assets/Edit Icon.png" alt="Edit Icon" />
-              <h4>x1</h4>
-            </div>
-            <img
-              class="cart-line"
-              src="../assets/Cart Line.png"
-              alt="Cart Line"
-            />
-          </div>
-          <div class="cart-product">
-            <img
-              class="product-img"
-              src="../assets/Delights Earrings Order.png"
-              alt="Deligth Earrings"
-            />
-            <div class="cart-product-info">
-              <h3>Deligths Earrings</h3>
-              <h4>Code: 78201</h4>
-              <h5>$327.71</h5>
-            </div>
-            <div class="cart-product-edit">
-              <img src="../assets/Edit Icon.png" alt="Edit Icon" />
-              <h4>x1</h4>
-            </div>
-            <img
-              class="cart-line"
-              src="../assets/Cart Line.png"
-              alt="Cart Line"
-            />
-          </div>
-          <div class="totalCheck-container">
-            <img class="cart-line" src="../assets/Cart Line.png" alt="Cart Line" />
-            <div class="totalCheck">
-              <h3>Total</h3>
-              <h4>$621.75</h4>
-            </div>
-            <button>Continue to check out</button>
-          </div>
         </div>
-      </section>
-    </div>
+    </section>
+</div>
+  <script src="../js/details.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/cart.js"></script>
   </body>
