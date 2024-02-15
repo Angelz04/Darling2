@@ -161,5 +161,4 @@ const productosCompraDetallados = productosCompra.map((item) => ({
 }));
 
 const totalCompra = calcularTotalCompra(productosCompraDetallados);
-console.log("Total a pagar de la compra:", `$${totalCompra}`);
 

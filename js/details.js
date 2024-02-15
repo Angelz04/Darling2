@@ -135,12 +135,19 @@ function manejarEventosBotones() {
 const setAddToCart = () => {
   const addToCart = document.getElementById("add-to-cart");
   addToCart.addEventListener("click", () => {
+    // Verificar si ya hay 3 productos en el carrito
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    if (carrito.length >= 3) {
+      alert("No se puede añadir otro producto al carrito. El límite es de 3 productos.");
+      return;
+    }
+
     let selectedColorBtn = getSelectedColor();
     let selectedSizeBtn = getSelectedSize();
     let quantityBtn = getQuantity();
 
     if (!selectedColorBtn || !selectedSizeBtn) {
-      alert("Porfavor Selcciona Una Talla Y Color Antes de continuar");
+      alert("Por favor selecciona una talla y un color antes de continuar.");
       return;
     }
 
@@ -156,8 +163,20 @@ const setAddToCart = () => {
       cantidad: quantityBtn
     }));
 
+    // Agregar el producto al carrito
+    carrito.push({
+      producto,
+      Color: selectedColorBtn,
+      talla: selectedSizeBtn,
+      cantidad: quantityBtn
+    });
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
     // Aquí enviar los detalles del producto al endpoint
     enviarAlCarrito(producto, selectedColorBtn, selectedSizeBtn, quantityBtn);
+
+    // Mostrar alerta de producto agregado con éxito
+    alert("Producto añadido con éxito al carrito.");
   });
 };
 
@@ -193,25 +212,27 @@ const enviarAlCarrito = (producto, selectedColorBtn, selectedSizeBtn, quantityBt
   })
   .then(response => {
     if (!response.ok) {
-      throw new Error('La red no esta bien');
+      throw new Error('La red no está bien');
     }
     return response.json();
   })
   .then(data => {
-    console.log('Producto Añadido Con Éxito', data);
-
+    console.log('Producto añadido con éxito', data);
   })
   .catch(error => {
-    console.error('Ocurrio un problema:', error);
+    console.error('Ocurrió un problema:', error);
   });
 };
 
 // Función para mostrar los detalles del producto almacenados en localStorage
 const mostrarDetallesEnLocalStorage = () => {
-  const productoEnCarrito = JSON.parse(localStorage.getItem("productoEnCarrito"));
-  if (productoEnCarrito) {
-    console.log("Detalles del producto en el carrito:", productoEnCarrito);
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  if (carrito.length > 0) {
+    console.log("Productos en el carrito:");
+    carrito.forEach(item => {
+      console.log(item.producto.nombre, " - Cantidad:", item.cantidad);
+    });
   } else {
-    console.log("No hay detalles de producto en el carrito almacenados en localStorage.");
+    console.log("No hay productos en el carrito.");
   }
 };
