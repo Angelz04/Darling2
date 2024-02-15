@@ -1,0 +1,27 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      
+main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      
+name: Checkout code
+      uses: actions/checkout@v2
+
+      
+name: Deploy
+      run: |
+        git config --global user.email "angelosbh2004@gmail.com"
+        git config --global user.name "Angelz04"
+        git checkout gh-pages
+        cp -r ./* ..  # Copia todos los archivos a la carpeta raíz
+        git add .
+        git commit -m "Deploy to GitHub Pages"
+        git push origin gh-pages
